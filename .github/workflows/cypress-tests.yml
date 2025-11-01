@@ -1,0 +1,92 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches: ['**']  # Run on all branches
+  pull_request:
+    branches: ['**']  # Run on PRs targeting any branch
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build Astro project
+        run: bun run build
+
+      - name: Start Astro preview server and run tests
+        run: |
+          # Start server in background with nohup to keep it alive
+          nohup bun run preview > preview.log 2>&1 &
+          echo $! > server.pid
+          
+          # Wait for server to be ready
+          echo "Waiting for server to start..."
+          timeout=60
+          counter=0
+          while ! curl -f http://localhost:4321 > /dev/null 2>&1; do
+            if [ $counter -ge $timeout ]; then
+              echo "Server failed to start within $timeout seconds"
+              echo "Preview log:"
+              cat preview.log || true
+              exit 1
+            fi
+            echo "Waiting... ($counter/$timeout seconds)"
+            sleep 2
+            counter=$((counter+2))
+          done
+          echo "Server is ready at http://localhost:4321"
+          
+          # Run Cypress tests
+          CYPRESS_baseUrl=http://localhost:4321 bun run test:ci
+          TEST_EXIT_CODE=$?
+          
+          # Stop server
+          if [ -f server.pid ]; then
+            kill $(cat server.pid) 2>/dev/null || true
+            rm server.pid
+          fi
+          
+          # Exit with test result
+          exit $TEST_EXIT_CODE
+
+      - name: Upload preview server logs (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-logs
+          path: preview.log
+          retention-days: 7
+
+      - name: Upload Cypress screenshots (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          retention-days: 7
+
+      - name: Upload Cypress videos (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          retention-days: 7
+
