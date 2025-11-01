@@ -30,38 +30,49 @@ jobs:
       - name: Build Astro project
         run: bun run build
 
-      - name: Start Astro preview server
+      - name: Start Astro preview server and run tests
         run: |
-          bun run preview > /dev/null 2>&1 &
+          # Start server in background with nohup to keep it alive
+          nohup bun run preview > preview.log 2>&1 &
           echo $! > server.pid
           
-      - name: Wait for server to be ready
-        run: |
+          # Wait for server to be ready
+          echo "Waiting for server to start..."
           timeout=60
           counter=0
-          until curl -f http://localhost:4321 > /dev/null 2>&1; do
+          while ! curl -f http://localhost:4321 > /dev/null 2>&1; do
             if [ $counter -ge $timeout ]; then
               echo "Server failed to start within $timeout seconds"
+              echo "Preview log:"
+              cat preview.log || true
               exit 1
             fi
-            echo "Waiting for server to start... ($counter/$timeout)"
+            echo "Waiting... ($counter/$timeout seconds)"
             sleep 2
             counter=$((counter+2))
           done
-          echo "Server is ready!"
-        
-      - name: Stop server after tests
-        if: always()
-        run: |
+          echo "Server is ready at http://localhost:4321"
+          
+          # Run Cypress tests
+          CYPRESS_baseUrl=http://localhost:4321 bun run test:ci
+          TEST_EXIT_CODE=$?
+          
+          # Stop server
           if [ -f server.pid ]; then
-            kill $(cat server.pid) || true
+            kill $(cat server.pid) 2>/dev/null || true
             rm server.pid
           fi
+          
+          # Exit with test result
+          exit $TEST_EXIT_CODE
 
-      - name: Run Cypress tests
-        run: bun run test:ci
-        env:
-          CYPRESS_baseUrl: http://localhost:4321
+      - name: Upload preview server logs (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-logs
+          path: preview.log
+          retention-days: 7
 
       - name: Upload Cypress screenshots (on failure)
         if: failure()
