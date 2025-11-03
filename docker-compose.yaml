@@ -3,8 +3,10 @@ services:
   web:
     build: .
     # For local testing; Coolify will map ports automatically in its UI
-    ports:
-      - "8080:80"
+    # Port mapping removed for Coolify deployment - it handles ports via its UI
+    # For local testing, uncomment the ports line below:
+    # ports:
+    #   - "8080:80"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
