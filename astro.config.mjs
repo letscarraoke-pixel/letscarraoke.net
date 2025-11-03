@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 export default defineConfig({
-  site: 'https://lets-carraoke.example',
+  site: 'https://lc-demo.sdcsapp.com',
   output: 'static'
 });
