@@ -2,9 +2,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Let’s Car’raoke — Concept B (Staycation Energy)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Let's Car'raoke - Private karaoke experiences in a car. Book your ride and turn any journey into a party with pro sound, lights, and your favorite songs." />
+  <title>Let's Car'raoke — Concept B (Staycation Energy)</title>
+  
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.instagram.com" />
+  <link rel="dns-prefetch" href="https://www.facebook.com" />
+  <link rel="dns-prefetch" href="https://dispatch.allrideapps.net" />
+  
+  <!-- Optimized Font Loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet" /></noscript>
+  
+  <!-- Critical CSS Inline -->
+  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/styles.css" /></noscript>
+  <script>!function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);</script>
   <style>
     .hero-b{background:linear-gradient(180deg,#000 10%, #111 90%);color:#fff;padding:56px 0}
     .hero-b h1{color:#fff}
@@ -16,7 +31,7 @@
   <header class="header">
     <div class="container header-inner">
       <div class="brand">
-        <img src='assets/lets-carraoke.png' alt="Let's Car'raoke logo" />
+        <img src='assets/lets-carraoke.png' alt="Let's Car'raoke logo" loading="eager" width="200" height="100" />
       </div>
       <div class="social-links">
         <a href="https://www.instagram.com/letscarraoke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -57,7 +72,7 @@
           <p class="tagline">Because every life has a soundtrack. What's yours?</p>
         </div>
         <a href="https://www.instagram.com/letscarraoke/" target="_blank" rel="noopener noreferrer" class="media">
-          <img src="assets/video-screenshot.png" alt="Let's Car'raoke video screenshot" />
+          <img src="assets/video-screenshot.png" alt="Let's Car'raoke video screenshot" loading="eager" width="800" height="500" />
         </a>
       </div>
     </section>
@@ -71,7 +86,7 @@
           <p>Private mics, pro sound, no strangers. It’s the hype without the hassle — perfect for birthdays, pregames, team nights, or just because.</p>
           <a href="https://dispatch.allrideapps.net/booking-form/5d4212f2-f629-48a1-9b9c-cb816296b00a" target="_blank" rel="noopener noreferrer" class="cta">Only Two Cars Available — Claim Your Spot</a>
         </div>
-        <img src="assets/CR-_0004_Layer-4.png" alt="Three women enjoying karaoke in a car" style="width:100%;height:auto;border-radius:12px;display:block" />
+        <img src="assets/CR-_0004_Layer-4.png" alt="Three women enjoying karaoke in a car" loading="lazy" width="600" height="400" style="width:100%;height:auto;border-radius:12px;display:block" />
       </div>
     </section>
 
@@ -83,7 +98,7 @@
           <h2>Moments string together into stories.</h2>
           <p>We make the in‑between moments unforgettable — a mini escape that feels like a night out, wherever you’re headed.</p>
         </div>
-        <img src="assets/CR-collage.png" alt="Let's Car'raoke collage of people enjoying karaoke in a car" style="width:100%;height:auto;border-radius:12px;display:block" />
+        <img src="assets/CR-collage.png" alt="Let's Car'raoke collage of people enjoying karaoke in a car" loading="lazy" width="600" height="400" style="width:100%;height:auto;border-radius:12px;display:block" />
       </div>
     </section>
 
@@ -194,7 +209,7 @@
     </div>
   </div>
 
-  <script>
+  <script defer>
     const cookieBanner = document.getElementById('cookie-banner');
     const cookieAccept = document.getElementById('cookie-accept');
     
