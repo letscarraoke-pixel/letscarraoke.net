@@ -1,19 +1,61 @@
 ---
-const title = "Pricing";
+const ALLRIDE_BOOKING_URL = "https://dispatch.allrideapps.net/booking-form/5d4212f2-f629-48a1-9b9c-cb816296b00a";
+const QUOTE_URL = "/#contact"; // TODO: replace if your contact/quote lives elsewhere (or use mailto:)
+const STRIPE_DEPOSIT_URL = ""; // Optional: paste Stripe Payment Link here, or leave blank
 ---
 
 <html lang="en">
   <head>
-    <title>{title} | Let’s Car’raoke</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <main>
-      <h1>{title}</h1>
-      <p>
-        This page will outline Let’s Car’raoke experience pricing and available options.
-      </p>
-    </main>
-  </body>
-</html>
+    <meta
+      name="description"
+      content="Let’s Car’raoke pricing — private karaoke experiences in a car. Book your ride and turn any journey into a party with pro sound, lights, and your favorite songs."
+    />
+    <title>Let’s Car’raoke — Pricing</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="icon" type="image/png" href="/assets/lets-carraoke.png" />
+    <link rel="apple-touch-icon" href="/assets/lets-carraoke.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.instagram.com" />
+    <link rel="dns-prefetch" href="https://www.facebook.com" />
+    <link rel="dns-prefetch" href="https://dispatch.allrideapps.net" />
+
+    <!-- Optimized Font Loading -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Critical CSS -->
+    <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/styles.css" /></noscript>
+
+    <script>
+      !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
+
+    <style>
+      .hero-b{background:linear-gradient(180deg,#000 10%, #111 90%);color:#fff;padding:56px 0}
+      .hero-b h1{color:#fff}
+      .final-cta-b{background:#111}
+      .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+      .price-card{border:1px solid #222;background:#0f0f0f;color:#fff;border-radius:14px;padding:18px}
+      .price-card h3{margin:0 0 8px 0}
+      .price{font-size:28px;font-weight:800;margin:10px 0}
+      .muted{opacity:.8}
+      .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+      .btn{display:inline-block;padding:12px 16p
