@@ -48,24 +48,22 @@ const STRIPE_DEPOSIT_URL = ""; // Optional: paste Stripe Payment Link here, or l
       !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
     </script>
 
-    <style>
-      .hero-b{background:linear-gradient(180deg,#000 10%, #111 90%);color:#fff;padding:56px 0}
-      .hero-b h1{color:#fff}
-      .final-cta-b{background:#111}
-      .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
-      .price-card{border:1px solid #222;background:#0f0f0f;color:#fff;border-radius:14px;padding:18px}
-      .price-card h3{margin:0 0 8px 0}
-      .price{font-size:28px;font-weight:800;margin:10px 0}
-      .muted{opacity:.8}
-      .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-      .btn{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-      .btn-primary{background:#fff;color:#000}
-      .btn-secondary{background:transparent;color:#fff;border:1px solid #333}
-      .section{padding:42px 0}
-      .section h2{margin:0 0 10px 0}
-      .list{margin:10px 0 0 18px}
-      .note{border-left:3px solid #333;padding-left:12px;margin-top:14px}
-      .top-note{margin-top:14px}
+    <.main-nav {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.nav-link {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.hero-b .nav-link {
+  color: #fff;
+}
+
     </style>
   </head>
 
