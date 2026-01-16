@@ -4,214 +4,31 @@ const QUOTE_URL = "/#contact"; // TODO: replace if your contact/quote lives else
 const STRIPE_DEPOSIT_URL = ""; // Optional: paste Stripe Payment Link here, or leave blank
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Let’s Car’raoke pricing — private karaoke experiences in a car. Book your ride and turn any journey into a party with pro sound, lights, and your favorite songs."
-    />
-    <title>Let’s Car’raoke — Pricing</title>
+---
+import Layout from '../layouts/Layout.astro';
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
-    <link rel="icon" type="image/png" href="/assets/lets-carraoke.png" />
-    <link rel="apple-touch-icon" href="/assets/lets-carraoke.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+const ALLRIDE_BOOKING_URL = "https://dispatch.allrideapps.net/booking-form/5d4212f2-f629-48a1-9b9c-cb816296b00a";
+const QUOTE_URL = "/#contact";
+const STRIPE_DEPOSIT_URL = "";
+---
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.instagram.com" />
-    <link rel="dns-prefetch" href="https://www.facebook.com" />
-    <link rel="dns-prefetch" href="https://dispatch.allrideapps.net" />
+<Layout title="Let’s Car’raoke — Pricing">
+  <main class="pricing-page">
+    <h1>Pricing</h1>
 
-    <!-- Optimized Font Loading -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Rubik:wght@300;400;500;700;800&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
-
-    <!-- Critical CSS -->
-    <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/styles.css" /></noscript>
-
-    <script>
-      !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o||"all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
-    </script>
-</script>
+    <!-- Keep your pricing content here (cards, sections, buttons) -->
+    <!-- Example button: -->
+    <a class="btn" href={ALLRIDE_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+      Book Now
+    </a>
+  </main>
+</Layout>
 
 <style>
-  .main-nav {
-    margin-left: auto;
-    margin-right: 16px;
-  }
-
-  .nav-link {
-    color: #000;
-    font-weight: 600;
-    text-decoration: none;
-    margin-right: 12px;
-  }
-
-  .hero-b .nav-link {
-    color: #fff;
+  /* Put only pricing-page styles here (NOT sitewide nav styles) */
+  .pricing-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
   }
 </style>
-
-    
- 
-    <header class="header">
-      <div class="container header-inner">
-        <div class="brand">
-          <a href="/" aria-label="Home">
-            <img src="/assets/lets-carraoke.png" alt="Let’s Car’raoke logo" loading="eager" width="200" height="100" />
-          </a>
-        </div>
-
-        <!-- Simple social links for now; we can swap in your SVG icons verbatim once you paste the block -->
-  <nav class="main-nav">
-  <a href="/pricing" class="nav-link">Pricing</a>
-</nav>
-<div class="social-links">
-  <a href="https://www.instagram.com/letscarraoke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
-    </svg>
-  </a>
-  <a href="https://www.facebook.com/letscarraoke" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
-    </svg>
-  </a>
-  <a href="https://x.com/letscarraoke" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
-    </svg>
-  </a>
-</div>
-
-      </div>
-    </header>
-
-    <section class="hero-b">
-      <div class="container">
-        <h1>Pricing</h1>
-        <p class="muted">
-          Let’s Car’raoke is a private experience, not a basic rideshare. Pricing reflects the experience level, vehicle setup, and service standards.
-        </p>
-
-        <div class="btn-row">
-          <a class="btn btn-primary" href={ALLRIDE_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
-          <a class="btn btn-secondary" href={QUOTE_URL}>Request a Quote</a>
-          {STRIPE_DEPOSIT_URL
-            ? <a class="btn btn-secondary" href={STRIPE_DEPOSIT_URL} target="_blank" rel="noopener noreferrer">Pay a Deposit</a>
-            : null}
-        </div>
-
-        <div class="note muted top-note">
-          Final pricing is confirmed at booking based on pickup area, day/time, and ride duration.
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>What pricing is based on</h2>
-        <ul class="list">
-          <li>Ride duration and route complexity</li>
-          <li>Day/time demand (weekends, peak hours, events)</li>
-          <li>Pickup zone and staging requirements</li>
-          <li>Group size and coordination needs</li>
-          <li>Experience upgrades (lighting, curated themes, special requests)</li>
-        </ul><div class="note muted">
-  <strong>Partners & Nonprofits:</strong><br />
-  We regularly work with nonprofit organizations, community groups, schools, and mission-aligned partners.
-  Partner and nonprofit arrangements are structured case-by-case based on scope, scheduling needs, and coordination requirements.
-  If you’re booking on behalf of an organization or program, we recommend requesting a quote so we can align on the right approach.
-</div>
-
-<div class="note muted" style="border:4px solid red;">
-  <strong>DEPLOYMENT TEST — YOU SHOULD SEE THIS</strong><br />
-  Partners & Nonprofits test marker.
-</div>
-
-        <div class="price-grid">
-          <div class="price-card">
-            <h3>Standard Car’raoke Experience</h3>
-            <div class="price">Starting at $___</div>
-            <p class="muted">For couples, friends, and visitors who want the signature in-car karaoke experience.</p>
-            <ul class="list">
-              <li>Pro audio + karaoke setup</li>
-              <li>Driver-host experience</li>
-              <li>Best for everyday bookings and tourism fun</li>
-            </ul>
-          </div>
-
-          <div class="price-card">
-            <h3>Premium / Private Experience</h3>
-            <div class="price">Starting at $___</div>
-            <p class="muted">For birthdays, anniversaries, date nights, and a more curated vibe.</p>
-            <ul class="list">
-              <li>Enhanced ambiance options</li>
-              <li>Priority coordination</li>
-              <li>Ideal for “make it memorable” rides</li>
-            </ul>
-          </div>
-
-          <div class="price-card">
-            <h3>Groups / Events</h3>
-            <div class="price">Custom Quote</div>
-            <p class="muted">For corporate events, wedding weeks, conferences, festivals, and large groups.</p>
-            <ul class="list">
-              <li>Multi-ride coordination</li>
-              <li>Staging and timing support</li>
-              <li>Optional partner/concierge coordination</li>
-            </ul>
-          </div>
-
-          <div class="price-card">
-            <h3>Care-Assist Transportation Experiences</h3>
-            <div class="price">Custom Quote</div>
-            <p class="muted">
-              Extra-considerate support for riders who benefit from additional help with transitions (vehicle-to-door and similar support).
-            </p>
-            <ul class="list">
-              <li>Clear, calm service approach</li>
-              <li>Coordination with family/organization when appropriate</li>
-              <li>Available by request and scheduling requirements</li>
-            </ul>
-            <div class="note muted">
-              Note: We do not provide medical services. If clinical or medical transport is required, we will refer you to an appropriate provider.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section final-cta-b">
-      <div class="container">
-        <h2>Upgrades and add-ons</h2>
-        <ul class="list">
-          <li>Theme-based ride experiences</li>
-          <li>Extended time blocks</li>
-          <li>Multiple pickup/drop coordination</li>
-          <li>Concierge / partner coordination for hotels and events</li>
-        </ul>
-
-        <div class="btn-row">
-          <a class="btn btn-primary" href={ALLRIDE_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
-          <a class="btn btn-secondary" href={QUOTE_URL}>Request a Quote</a>
-        </div>
-      </div>
-    </section>
- 
-</html>
