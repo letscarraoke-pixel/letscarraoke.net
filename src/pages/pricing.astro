@@ -1,35 +1,81 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const ALLRIDE_BOOKING_URL = "https://dispatch.allrideapps.net/booking-form/5d4212f2-f629-48a1-9b9c-cb816296b00a";
-const QUOTE_URL = "/#contact";
-const STRIPE_DEPOSIT_URL = "";
+const ALLRIDE_BOOKING_URL =
+  "https://dispatch.allrideapps.net/booking-form/5d4212f2-f629-48a1-9b9c-cb816296b00a";
 ---
 
-import Layout from '../layouts/Layout.astro';
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Let’s Car’raoke — Pricing</title>
 
-const ALLRIDE_BOOKING_URL = "https://dispatch.allrideapps.net/booking-form/5d4212f2-f629-48a1-9b9c-cb816296b00a";
-const QUOTE_URL = "/#contact";
-const STRIPE_DEPOSIT_URL = "";
----
+    <!-- If you have a global stylesheet in /public, keep this. If not, you can delete it. -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-<Layout title="Let’s Car’raoke — Pricing">
-  <main class="pricing-page">
-    <h1>Pricing</h1>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Home">
+          <img
+            src="/assets/lets-carraoke.png"
+            alt="Let’s Car’raoke logo"
+            loading="eager"
+            width="200"
+            height="100"
+          />
+        </a>
 
-    <!-- Keep your pricing content here (cards, sections, buttons) -->
-    <!-- Example button: -->
-    <a class="btn" href={ALLRIDE_BOOKING_URL} target="_blank" rel="noopener noreferrer">
-      Book Now
-    </a>
-  </main>
-</Layout>
+        <nav class="main-nav">
+          <a class="nav-link" href="/services">Services</a>
+          <a class="nav-link" href="/pricing">Pricing</a>
+          <a class="nav-link" href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-<style>
-  /* Put only pricing-page styles here (NOT sitewide nav styles) */
-  .pricing-page {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-</style>
+    <main class="pricing-page">
+      <h1>Pricing</h1>
+      <p>Book your experience and get an instant quote.</p>
+
+      <p>
+        <a class="btn" href={ALLRIDE_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+          Book Now
+        </a>
+      </p>
+    </main>
+
+    <style>
+      .pricing-page {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        border: 1px solid #111;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .main-nav {
+        margin-left: auto;
+      }
+      .nav-link {
+        color: #000;
+        font-weight: 600;
+        text-decoration: none;
+        margin-right: 12px;
+      }
+    </style>
+  </body>
+</html>
