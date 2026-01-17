@@ -85,22 +85,28 @@ p {
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #111;
-  background: #111;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: #f26a1b; /* Car’raoke orange */
   color: #fff;
-  font-weight: 600;
+  font-weight: 800;
   text-decoration: none;
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .btn-secondary {
+  display: inline-block;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #f26a1b;
   background: transparent;
-  color: #111;
+  color: #f26a1b;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .text-link {
