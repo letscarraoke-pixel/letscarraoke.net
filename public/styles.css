@@ -150,3 +150,36 @@ ul {
 li {
   margin: 0.4rem 0;
 }
+/* ---------- Homepage CTA buttons (existing markup) ---------- */
+
+a.cta,
+a.sticky-cta {
+  display: inline-block;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  background: #f26a1b;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+a.cta:hover,
+a.sticky-cta:hover {
+  opacity: 0.92;
+}
+
+/* ---------- Homepage nav links (no class on <a>) ---------- */
+
+nav.nav a {
+  margin-right: 12px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+nav.nav a:hover {
+  background: #f2f2f2;
+}
