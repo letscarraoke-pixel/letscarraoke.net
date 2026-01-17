@@ -1,94 +1,146 @@
+/* ---------- Base ---------- */
 
-/* Let's Car'raoke — Wireframe Styles */
-:root{
-  --orange:#FF6B1F;
-  --orange-alt:#FF6600;
-  --black:#000000;
-  --soft:#EEEEEE;
-  --charcoal:#4D4D4D;
+* {
+  box-sizing: border-box;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:'Lato',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--charcoal);background:#fff}
-img{max-width:100%;height:auto;display:block}
-a{text-decoration:none;color:inherit}
-a:visited{color:inherit}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+}
 
-.container{width:min(1100px, 92vw);margin-inline:auto;padding:24px}
-.header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:50}
-.header-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;justify-self:start}
-.brand img{max-height:100px;width:auto;height:auto}
-.social-links{display:flex;gap:16px;align-items:center;justify-self:center}
-.social-links a{display:flex;align-items:center;justify-content:center;color:var(--charcoal);transition:color 0.2s;text-decoration:none}
-.social-links a:hover{color:var(--orange)}
-.social-links svg{width:20px;height:20px}
-.nav{display:flex;gap:16px;align-items:center;justify-self:end}
-.nav a{font-size:14px;text-decoration:none;color:var(--charcoal)}
-.cta{background:var(--orange);color:#fff;border:none;padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
-.cta.secondary{background:transparent;color:var(--orange);border:2px solid var(--orange)}
-.sticky-cta{position:fixed;right:16px;bottom:16px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-.hero{padding:48px 0}
-.hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;justify-content:center}
-.hero > .container > div:first-child{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.hero .media{display:block;border-radius:16px;overflow:hidden;transition:opacity 0.2s}
-.hero .media:hover{opacity:0.9}
-.hero .media img{width:100%;height:auto;display:block;border-radius:16px}
-.hero h1{font-family:'Rubik',sans-serif;font-weight:800;color:var(--black);margin:0 0 16px;font-size:clamp(28px, 4vw, 42px);line-height:1.3;text-align:left}
-.hero p{font-size:18px;max-width:46ch;margin:0 0 24px;line-height:1.7;text-align:left}
-.hero .tagline{line-height:1.6;margin-top:16px;text-align:left}
-.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,107,31,.1);color:var(--orange);padding:8px 12px;border-radius:999px;font-weight:700;font-size:14px;width:fit-content}
+/* ---------- Layout ---------- */
 
-.section{padding:56px 0;border-top:1px solid #f3f3f3}
-.section h2{font-family:'Rubik',sans-serif;font-size:clamp(24px,3.2vw,34px);margin:0 0 8px;color:var(--black)}
-.kicker{color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;margin-bottom:10px}
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-.card{background:#fff;border:1px dashed #ddd;border-radius:14px;padding:20px;min-height:140px}
-.placeholder{background:var(--soft);border:2px dashed #ccc;border-radius:12px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#aaa}
-.placeholder img{width:100%;height:auto;object-fit:cover;border-radius:12px;display:block}
+/* ---------- Header / Nav ---------- */
 
-.benefits .icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-alt));margin-bottom:10px}
-.benefits h3{margin:0 0 6px;font-size:16px;font-weight:700;color:var(--black)}
-.benefits p{margin:0;font-size:14px;color:#555}
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+}
 
-.testimonials .quote-icon{display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
-.testimonials .quote-icon svg{width:48px;height:48px}
-.testimonials .quote{font-size:16px;line-height:1.45}
-.testimonials .by{margin-top:10px;font-size:14px;color:#666}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
 
-.steps .step{display:flex;gap:16px;align-items:flex-start}
-.steps .num{flex:0 0 36px;height:36px;border-radius:50%;background:var(--black);color:#fff;display:grid;place-items:center;font-weight:700}
-.steps p{margin:0}
+.main-nav {
+  margin-left: auto;
+}
 
-.final-cta{background:var(--black);color:#fff;border-radius:18px;padding:36px;text-align:center}
-.final-cta h3{margin:0 0 8px;font-family:'Rubik',sans-serif;font-size:clamp(22px,3vw,30px)}
-.final-cta p{margin:0 0 18px;color:#ddd}
-.final-cta .cta{background:var(--orange)}
+.nav-link {
+  margin-right: 12px;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
 
-.footer{padding:36px 0;color:#777;font-size:14px}
+.nav-link:hover {
+  text-decoration: underline;
+}
 
-.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;box-shadow:0 -4px 12px rgba(0,0,0,.1);z-index:100;display:none;padding:16px 0}
-.cookie-banner-content{width:min(1100px, 92vw);margin-inline:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.cookie-banner p{margin:0;font-size:14px;color:var(--charcoal);flex:1;min-width:250px}
-.cookie-btn{background:var(--orange);color:#fff;border:none;padding:10px 24px;border-radius:999px;font-weight:700;cursor:pointer;font-size:14px;white-space:nowrap}
-.cookie-btn:hover{opacity:0.9}
+/* ---------- Typography ---------- */
 
-.tagline{font-style:italic;color:#555;margin-top:8px}
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
 
-@media (max-width: 880px){
-  .hero{grid-template-columns:1fr;gap:18px}
-  .grid-2{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  .grid-5{grid-template-columns:repeat(2,1fr)}
-  .header-inner{grid-template-columns:1fr;gap:12px;justify-items:center}
-  .brand{justify-self:center}
-  .social-links{order:2}
-  .nav{order:3;flex-wrap:wrap;justify-content:center}
-  .cookie-banner-content{flex-direction:column;text-align:center;gap:12px}
-  .cookie-btn{width:100%}
+h1 {
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+/* ---------- Buttons & Links ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #111;
+}
+
+.text-link {
+  font-weight: 600;
+  color: #111;
+  text-decoration: underline;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+/* ---------- Cards (Pricing / Services) ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* ---------- Lists ---------- */
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin: 0.4rem 0;
 }
