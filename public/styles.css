@@ -262,3 +262,32 @@ img.media {
 img.media.sm {
   max-width: 520px;
 }
+/* ---------- Hard cap content media (works for img + picture) ---------- */
+
+/* Default: keep content images from dominating the page */
+main img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 12px;
+}
+
+/* If images are wrapped in <picture>, cap the picture too */
+main picture {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 1rem auto;
+}
+
+/* Hero-style images: allow a bit wider, but cap height so they don't read like flyers */
+main .hero img,
+main img.hero,
+main img.hero-media,
+main .hero-media img {
+  max-width: 720px;
+  max-height: 340px;
+  object-fit: cover;
+}
