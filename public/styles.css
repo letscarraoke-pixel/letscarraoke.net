@@ -239,3 +239,26 @@ img {
 .media.sm img {
   max-width: 520px;
 }
+/* ---------- Fix when classes are on the IMG itself ---------- */
+
+img.hero-media {
+  width: 100%;
+  max-width: 900px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 1.25rem auto;
+}
+
+img.media {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  display: block;
+  margin: 1.25rem auto;
+}
+
+img.media.sm {
+  max-width: 520px;
+}
