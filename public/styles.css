@@ -291,32 +291,7 @@ main .hero-media img {
   max-height: 340px;
   object-fit: cover;
 }
-/* ---------- Feature Tiles (What's Included) ---------- */
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin: 1rem 0 2rem;
-}
-
-.feature-card {
-  padding: 16px 16px;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 14px;
-  background: #fff;
-}
-
-.feature-title {
-  font-weight: 900;
-  margin: 0 0 6px;
-  font-size: 1.05rem;
-}
-
-.feature-desc {
-  margin: 0;
-  opacity: 0.85;
-}
 /* ---------- Restore Homepage "Excitement" (Benefits / Testimonials / Steps) ---------- */
 
 /* WHAT'S INCLUDED */
@@ -325,6 +300,14 @@ main .hero-media img {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
   margin-top: 14px;
+}
+.section.benefits .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  background: rgba(242,106,27,0.12);
+  border: 1px solid rgba(242,106,27,0.25);
 }
 
 .section.benefits .grid-5 > div {
@@ -365,6 +348,9 @@ main .hero-media img {
   border-radius: 14px;
   background: #fff;
 }
+.section.testimonials .card {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
 
 .section.testimonials .quote {
   margin: 10px 0 0;
@@ -398,6 +384,7 @@ main .hero-media img {
   border: 1px solid rgba(0,0,0,0.12);
   border-radius: 14px;
   background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 
 .section.steps .num {
@@ -409,8 +396,8 @@ main .hero-media img {
   font-weight: 900;
   border: 1px solid rgba(0,0,0,0.14);
   background: rgba(0,0,0,0.03);
+  color: #111;
 }
-
 .section.steps h3 {
   margin: 0;
   font-weight: 900;
@@ -426,6 +413,3 @@ main .hero-media img {
   .section.steps .grid-3 { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 900px) {
-  .features { grid-template-columns: 1fr; }
-}
