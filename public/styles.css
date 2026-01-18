@@ -457,4 +457,8 @@ main .hero-media img {
 .final-cta-b * {
   color: #fff !important;
 }
+/* TEMP TEST: if you don't see a bright outline on mobile, you're not loading this CSS */
+@media (max-width: 900px) {
+  body { outline: 6px solid magenta !important; }
+}
 
