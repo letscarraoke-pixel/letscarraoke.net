@@ -461,4 +461,24 @@ main .hero-media img {
 @media (max-width: 900px) {
   body { outline: 6px solid magenta !important; }
 }
+/* FIX: mobile header/nav sitting on dark hero (force an opaque bar on top) */
+@media (max-width: 900px) {
+  header.header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff !important;
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+  }
+
+  .header-inner,
+  nav.nav {
+    background: #fff !important;
+  }
+
+  header.header img {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
 
