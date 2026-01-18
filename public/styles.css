@@ -481,4 +481,12 @@ main .hero-media img {
     opacity: 1 !important;
   }
 }
+.final-cta-b {
+  color: #fff !important;
+}
+
+.final-cta-b h3,
+.final-cta-b p {
+  color: #fff !important;
+}
 
