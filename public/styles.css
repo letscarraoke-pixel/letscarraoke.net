@@ -210,3 +210,32 @@ img {
   height: auto;
   display: block;
 }
+/* ---------- Contain + Proportion Hero/Section Media ---------- */
+
+/* Center media blocks and keep them from feeling like posters */
+.hero-media,
+.media {
+  margin: 1.25rem auto;
+  width: 100%;
+}
+
+/* Hero images: limit height and crop gracefully */
+.hero-media img {
+  width: 100%;
+  max-width: 900px;     /* aligns with your media max */
+  max-height: 420px;    /* this is the key: stops "8.5x11" feel */
+  object-fit: cover;    /* crops instead of stretching */
+  border-radius: 12px;
+}
+
+/* Regular images inside .media: smaller and balanced */
+.media img {
+  width: 100%;
+  max-width: 720px;     /* tighter than hero */
+  border-radius: 12px;
+}
+
+/* Optional: if you have small “supporting” images */
+.media.sm img {
+  max-width: 520px;
+}
