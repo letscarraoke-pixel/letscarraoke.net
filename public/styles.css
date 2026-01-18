@@ -317,6 +317,114 @@ main .hero-media img {
   margin: 0;
   opacity: 0.85;
 }
+/* ---------- Restore Homepage "Excitement" (Benefits / Testimonials / Steps) ---------- */
+
+/* WHAT'S INCLUDED */
+.section.benefits .grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.section.benefits .grid-5 > div {
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.section.benefits .grid-5 h3 {
+  margin: 0 0 6px;
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.section.benefits .grid-5 p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 1100px) {
+  .section.benefits .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .section.benefits .grid-5 { grid-template-columns: 1fr; }
+}
+
+/* TESTIMONIALS */
+.section.testimonials .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.section.testimonials .card {
+  padding: 18px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.section.testimonials .quote {
+  margin: 10px 0 0;
+  line-height: 1.55;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.section.testimonials .quote-icon {
+  opacity: 0.65;
+}
+
+@media (max-width: 900px) {
+  .section.testimonials .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* STEPS */
+.section.steps .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.section.steps .step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.section.steps .num {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: rgba(0,0,0,0.03);
+}
+
+.section.steps h3 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.section.steps p {
+  margin: 4px 0 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .section.steps .grid-3 { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 900px) {
   .features { grid-template-columns: 1fr; }
