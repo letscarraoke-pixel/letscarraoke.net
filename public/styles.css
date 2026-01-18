@@ -430,4 +430,31 @@ main .hero-media img {
     filter: none;
   }
 }
+/* ---------- FORCE mobile header/nav visibility (override) ---------- */
+
+@media (max-width: 900px) {
+  header.header,
+  .header,
+  .header-inner,
+  nav.nav {
+    background: #fff !important;
+  }
+
+  header.header *,
+  nav.nav a {
+    color: #111 !important;
+  }
+
+  header.header img {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ---------- FORCE final CTA text visibility on dark background ---------- */
+
+.final-cta-b,
+.final-cta-b * {
+  color: #fff !important;
+}
 
