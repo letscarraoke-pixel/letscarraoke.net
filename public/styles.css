@@ -419,4 +419,15 @@ main .hero-media img {
 .final-cta-b p {
   color: #fff;
 }
+/* ---------- Mobile Header Contrast Fix ---------- */
+
+@media (max-width: 900px) {
+  .header {
+    background: #fff;
+  }
+
+  .header img {
+    filter: none;
+  }
+}
 
