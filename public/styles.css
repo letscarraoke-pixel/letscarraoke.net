@@ -412,4 +412,11 @@ main .hero-media img {
 @media (max-width: 900px) {
   .section.steps .grid-3 { grid-template-columns: 1fr; }
 }
+/* ---------- Final CTA text contrast fix ---------- */
+
+.final-cta-b,
+.final-cta-b h3,
+.final-cta-b p {
+  color: #fff;
+}
 
